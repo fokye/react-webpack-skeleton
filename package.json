@@ -1,0 +1,29 @@
+{
+  "name": "react-webpack-skeleton",
+  "description": "A skeleton for a React app using Webpack 3.",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "scripts/build",
+    "start": "scripts/start",
+    "test": "scripts/test"
+  },
+  "devDependencies": {
+    "babel-core": "6.25.0",
+    "babel-loader": "7.1.1",
+    "babel-preset-env": "1.5.2",
+    "babel-preset-react": "6.24.1",
+    "babel-preset-stage-0": "6.24.1",
+    "css-loader": "0.28.4",
+    "eslint": "4.1.1",
+    "eslint-loader": "1.8.0",
+    "eslint-plugin-react": "7.1.0",
+    "style-loader": "0.18.2",
+    "webpack": "3.0.0",
+    "webpack-dev-server": "2.5.0"
+  },
+  "dependencies": {
+    "prop-types": "15.5.10",
+    "react": "15.6.1",
+    "react-dom": "15.6.1"
+  }
+}
