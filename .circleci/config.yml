@@ -6,25 +6,25 @@ jobs:
       - image: circleci/node:8.1.2
     steps:
       - checkout
+      - run:
+          name: Scanning dependencies for vulnerabilities
+          command: yarn run security
       - restore_cache:
           key: v1-yarn-{{ .Branch }}-{{ checksum "yarn.lock" }}
       - run:
-          name: Install dependencies
+          name: Installing dependencies
           command: yarn install
       - save_cache:
           key: v1-yarn-{{ .Branch }}-{{ checksum "yarn.lock" }}
           paths:
             - node_modules
       - run:
-          name: Run security scan
-          command: yarn run security
-      - run:
-          name: Run tests
+          name: Testing
           command: mkdir -p /tmp/test-results/junit && yarn test --silent -- --reporter xunit > /tmp/test-results/junit/test-results.xml
       - store_test_results:
           path: /tmp/test-results
       - run:
-          name: Build assets for production
+          name: Building assets for production
           command: NODE_ENV=production yarn build
       - store_artifacts:
           path: index.js
