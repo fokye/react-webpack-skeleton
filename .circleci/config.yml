@@ -6,6 +6,18 @@ jobs:
       - image: circleci/node:8.1.2
     steps:
       - checkout
-      - run: npm install
-      - run: npm run build
-      - run: npm test
+      - restore_cache:
+          key: {{ .Branch }}-{{ checksum "package-lock.json" }}-{{ checksum "yarn.lock" }}
+      - run:
+          name: Install dependencies
+          command: npm install
+      - save_cache:
+          key: {{ .Branch }}-{{ checksum "package-lock.json" }}-{{ checksum "yarn.lock" }}
+          paths:
+            - "node_modules"
+      - run:
+          name: Build assets
+          command: npm run build
+      - run:
+          name: Run tests
+          command: npm test
