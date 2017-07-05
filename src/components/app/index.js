@@ -1,6 +1,8 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 
+import styles from './styles.css';
+
 class App extends React.Component {
   static get propTypes() {
     const { string } = PropTypes;
@@ -12,7 +14,7 @@ class App extends React.Component {
   render() {
     const { name } = this.props;
     return (
-      <div>{name}</div>
+      <div className={styles.app}>{name}</div>
     );
   }
 }
