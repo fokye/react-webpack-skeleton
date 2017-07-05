@@ -20,6 +20,6 @@ jobs:
           command: yarn build
       - run:
           name: Run tests
-          command: mkdir -p /tmp/junit && yarn test --silent -- --reporter xunit > /tmp/junit/test-results.xml
+          command: mkdir -p /tmp/test-results/junit && yarn test --silent -- --reporter xunit > /tmp/test-results/junit/test-results.xml
       - store_test_results:
-          path: /tmp
+          path: /tmp/test-results
