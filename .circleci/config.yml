@@ -7,17 +7,17 @@ jobs:
     steps:
       - checkout
       - restore_cache:
-          key: v1-npm-{{ .Branch }}-{{ checksum "package-lock.json" }}
+          key: v1-yarn-{{ .Branch }}-{{ checksum "yarn.lock" }}
       - run:
           name: Install dependencies
-          command: npm install
+          command: yarn install
       - save_cache:
-          key: v1-npm-{{ .Branch }}-{{ checksum "package-lock.json" }}
+          key: v1-yarn-{{ .Branch }}-{{ checksum "yarn.lock" }}
           paths:
             - node_modules
       - run:
           name: Build assets
-          command: npm run build
+          command: yarn build
       - run:
           name: Run tests
-          command: npm test
+          command: yarn test
