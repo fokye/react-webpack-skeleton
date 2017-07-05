@@ -1,7 +1,6 @@
+import App from './components/app';
 import React from 'react';
 import ReactDOM from 'react-dom';
-
-import App from './components/app';
 
 const app = <App name='Hello, world!'/>;
 

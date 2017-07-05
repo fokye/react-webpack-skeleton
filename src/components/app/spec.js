@@ -1,7 +1,6 @@
-import React from 'react';
-
+/*global describe, it*/
 import App from './index';
-
+import React from 'react';
 import { expect } from 'chai';
 import { shallow } from 'enzyme';
 

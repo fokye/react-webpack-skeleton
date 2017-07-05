@@ -1,6 +1,5 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-
 import styles from './styles.css';
 
 class App extends React.Component {
@@ -12,7 +11,7 @@ class App extends React.Component {
   }
 
   render() {
-    const { name } = this.props;
+    const { props: { name } } = this;
     return (
       <div className={styles.app}>{name}</div>
     );
