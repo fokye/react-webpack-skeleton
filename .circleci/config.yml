@@ -16,6 +16,9 @@ jobs:
           paths:
             - node_modules
       - run:
+          name: Run security scan
+          command: yarn run security
+      - run:
           name: Run tests
           command: mkdir -p /tmp/test-results/junit && yarn test --silent -- --reporter xunit > /tmp/test-results/junit/test-results.xml
       - store_test_results:
