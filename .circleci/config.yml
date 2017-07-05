@@ -6,9 +6,6 @@ jobs:
       - image: circleci/node:8.1.2
     steps:
       - checkout
-      - run:
-          name: Scanning dependencies for vulnerabilities
-          command: yarn run security
       - restore_cache:
           key: v1-yarn-{{ .Branch }}-{{ checksum "yarn.lock" }}
       - run:
@@ -18,6 +15,9 @@ jobs:
           key: v1-yarn-{{ .Branch }}-{{ checksum "yarn.lock" }}
           paths:
             - node_modules
+      - run:
+          name: Scanning dependencies for vulnerabilities
+          command: yarn run security
       - run:
           name: Testing
           command: mkdir -p /tmp/test-results/junit && yarn test --silent -- --reporter xunit > /tmp/test-results/junit/test-results.xml
