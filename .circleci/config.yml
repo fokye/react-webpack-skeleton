@@ -16,13 +16,12 @@ jobs:
           paths:
             - node_modules
       - run:
-          name: Build assets
-          command: yarn build
-      - store_artifacts:
-          path: index.js
-      - run:
           name: Run tests
           command: mkdir -p /tmp/test-results/junit && yarn test --silent -- --reporter xunit > /tmp/test-results/junit/test-results.xml
       - store_test_results:
           path: /tmp/test-results
-
+      - run:
+          name: Build assets for production
+          command: NODE_ENV=production yarn build
+      - store_artifacts:
+          path: index.js
