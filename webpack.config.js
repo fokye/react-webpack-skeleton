@@ -8,7 +8,10 @@ const sourceDirectory = path.resolve(__dirname, 'src');
 const targetDirectory = __dirname;
 
 module.exports = {
-  entry: path.resolve(sourceDirectory, 'index.js'),
+  entry: [
+    'babel-polyfill',
+    path.resolve(sourceDirectory, 'index.js')
+  ],
   output: {
     path: targetDirectory,
     filename: 'index.js'
