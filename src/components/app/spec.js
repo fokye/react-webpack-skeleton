@@ -1,8 +1,10 @@
 /*global describe, it*/
 import App from './index';
 import React from 'react';
-import { expect } from 'chai';
+import chai from 'chai';
 import { shallow } from 'enzyme';
+
+const { expect } = chai;
 
 describe('App', () => {
   it('should render its name', function() {
