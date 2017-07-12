@@ -1,15 +1,30 @@
-/*global describe, it*/
+/*global beforeEach, context, describe, it*/
 import App from './index';
 import React from 'react';
 import chai from 'chai';
 import { shallow } from 'enzyme';
+import sinon from 'sinon';
 
 const { expect } = chai;
 
 describe('App', () => {
-  it('should render its name', function() {
-    const name = 'its name';
-    const subject = shallow(<App name={name}/>);
-    expect(subject).to.include.text(name);
+  const name = 'its name';
+  const onClick = sinon.spy();
+  const component = <App name={name} onClick={onClick}/>;
+
+  it('should render its name', () => {
+    expect(shallow(component)).to.include.text(name);
+  });
+
+  context('when clicked', () => {
+    beforeEach('simulate a click', () => {
+      shallow(component).simulate('click');
+    });
+
+    describe('its onClick callback', () => {
+      it('should have been called once', () => {
+        expect(onClick).to.have.been.calledOnce;
+      });
+    });
   });
 });

@@ -7,5 +7,8 @@ SOURCE_DIR=${BASE_DIR}/src
 (
   cd "${SOURCE_DIR}"
   find . -type f -name spec.js | xargs eslint spec.setup.js || exit 1
-  find . -type f -name spec.js | xargs mocha $* --compilers js:babel-register spec.setup.js
+  find . -type f -name spec.js | xargs mocha $* \
+    --compilers js:babel-register \
+    --require babel-polyfill \
+    spec.setup.js
 )
