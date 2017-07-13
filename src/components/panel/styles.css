@@ -1,0 +1,31 @@
+.panel {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  border-radius: 2px;
+  border-width: 1px;
+}
+
+.panel,
+.header,
+.footer {
+  border-color: rgba(128, 128, 128, 0.25);
+  border-style: solid;
+}
+
+.header,
+.footer {
+  border-width: 0;
+}
+
+.header {
+  border-bottom-width: 1px;
+}
+
+.footer {
+  border-top-width: 1px;
+}
+
+.content {
+  flex: 1;
+}

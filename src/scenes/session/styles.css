@@ -1,0 +1,12 @@
+.sessionScene {
+  margin: 16px;
+  padding: 16px;
+}
+
+.field {
+  display: block;
+}
+
+.action {
+  display: block;
+}

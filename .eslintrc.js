@@ -20,14 +20,14 @@ module.exports = {
     'react'
   ],
   rules: {
-    indent: ['error', 2],
+    indent: ['error', 2, { SwitchCase: 1 }],
     'linebreak-style': ['error', 'unix'],
     quotes: ['error', 'single'],
     semi: ['error', 'always'],
     'no-duplicate-imports': ['error'],
     'no-else-return': ['error'],
     'no-iterator': ['error'],
-    'no-magic-numbers': ['error'],
+    'no-magic-numbers': ['error', { ignore: [0, 1] }],
     'no-multi-spaces': ['error'],
     'no-multi-str': ['error'],
     'no-labels': ['error'],

@@ -1,14 +1,19 @@
+import { applyMiddleware, combineReducers, createStore } from 'redux';
+
 import App from './components/app';
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Provider as ReduxProvider } from 'react-redux';
 
-const logSomething = () => {
-  // eslint-disable-next-line no-console
-  console.log('Clicking is fun.');
-};
-
-const app = <App name='Hello, world!' onClick={logSomething}/>;
+import createSessionReducer from 'scenes/session/reducer';
+import thunk from 'redux-thunk';
 
 document.addEventListener('DOMContentLoaded', function() {
-  ReactDOM.render(app, document.querySelector('#app'));
+  ReactDOM.render((
+    <ReduxProvider store={createStore(combineReducers({
+      session: createSessionReducer()
+    }), applyMiddleware(thunk))}>
+      <App/>
+    </ReduxProvider>
+  ), document.querySelector('#app'));
 });
