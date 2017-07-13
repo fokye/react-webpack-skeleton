@@ -1,6 +1,9 @@
-/*global context, describe, it*/
+/*global context, it*/
+import Panel from './index';
 
-describe('Panel', () => {
+import describeComponent from '_/components/describe';
+
+describeComponent(Panel, () => {
   context('when given children', () => {
     it('should render the children');
   });

@@ -40,9 +40,7 @@ module.exports = {
     ]
   },
   resolve: {
-    modules: [
-      sourceDirectory,
-      modulesDirectory
-    ]
+    alias: { _: sourceDirectory },
+    modules: [modulesDirectory]
   }
 };

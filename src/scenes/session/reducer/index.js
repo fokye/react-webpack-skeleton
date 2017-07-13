@@ -1,4 +1,4 @@
-import { SESSION_CREATE_FINISH, SESSION_CREATE_START } from 'scenes/session/actions/create';
+import { SESSION_CREATE_FINISH, SESSION_CREATE_START } from '../actions/create';
 
 const createSessionReducer = (initialState = {}) => (state = initialState, action) => {
   if (action.error) {

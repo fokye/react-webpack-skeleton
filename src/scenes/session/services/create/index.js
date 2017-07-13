@@ -1,5 +1,3 @@
-const SECONDS = 1000;
-
 const mockSession = () => ({
   user: {
     id: 1,
@@ -7,12 +5,11 @@ const mockSession = () => ({
   }
 });
 
-const create = () => {
+const createSession = () => {
   return new Promise((resolve) => {
-    setTimeout(() => {
-      resolve(mockSession());
-    }, 1 * SECONDS);
+    const session = mockSession();
+    resolve(session);
   });
 };
 
-export default create;
+export default createSession;

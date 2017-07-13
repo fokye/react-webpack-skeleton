@@ -1,4 +1,4 @@
-import performCreate from 'scenes/session/services/create';
+import performCreate from '../../services/create';
 
 const SESSION_CREATE_START = 'SESSION_CREATE_START';
 const SESSION_CREATE_FINISH = 'SESSION_CREATE_FINISH';
