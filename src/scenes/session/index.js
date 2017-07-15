@@ -1,12 +1,10 @@
 import SessionScene from './components/scene';
 
 import { connect } from 'react-redux';
-import createSession from './actions/create';
+import onCreate from './actions/create';
 
-export default connect(state => ({
-  isSigningIn: !!state.session.isSigningIn
-}), dispatch => ({
-  onSignIn() {
-    dispatch(createSession());
-  }
-}))(SessionScene);
+const mapStateToProps = state => ({
+  isCreating: !!state.session.isCreating
+});
+
+export default connect(mapStateToProps, { onCreate })(SessionScene);

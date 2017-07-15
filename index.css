@@ -1,6 +1,9 @@
+/**
+ * Basic CSS reset for the app container.
+ * Ensure we have the full screen available for the app to render.
+ */
 html,
-body,
-#app {
+body {
   position: absolute;
   margin: 0;
   padding: 0;

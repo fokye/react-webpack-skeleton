@@ -5,6 +5,9 @@ BASE_DIR=$(dirname "${SCRIPTS_DIR}")
 SOURCE_DIR=${BASE_DIR}/src
 NODE_MODULES_DIR=${BASE_DIR}/node_modules
 
+MOCHA=${NODE_MODULES_DIR}/.bin/mocha
+ESLINT=${NODE_MODULES_DIR}/.bin/eslint
+
 link_source_dir() {
   unlink_source_dir
   ln -s "${SOURCE_DIR}" "${NODE_MODULES_DIR}/_"
@@ -17,7 +20,7 @@ unlink_source_dir() {
 lint_tests() {
   (
     cd "${SOURCE_DIR}"
-    find . -type f -name spec.js | xargs eslint spec.setup.js
+    find . -type f -name spec.js | xargs "${ESLINT}" spec.setup.js
   ) || exit 1
 }
 
@@ -26,7 +29,7 @@ run_tests() {
   link_source_dir
   (
     cd "${SOURCE_DIR}"
-    find . -type f -name spec.js | xargs mocha $* \
+    find . -type f -name spec.js | xargs "${MOCHA}" $* \
       --compilers js:babel-register \
       --require babel-polyfill \
       spec.setup.js

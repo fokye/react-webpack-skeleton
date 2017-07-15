@@ -9,34 +9,34 @@ class SessionScene extends React.Component {
   static get propTypes() {
     const { bool, func } = PropTypes;
     return {
-      isSigningIn: bool.isRequired,
-      onSignIn: func.isRequired
+      isCreating: bool.isRequired,
+      onCreate: func.isRequired
     };
   }
 
-  handleSignIn = (event) => {
-    const { props: { onSignIn } } = this;
+  handleCreate = (event) => {
+    const { props: { onCreate } } = this;
     event.preventDefault();
-    onSignIn();
+    onCreate();
     return false;
   };
 
   render() {
-    const { handleSignIn, props: { isSigningIn } } = this;
+    const { handleCreate, props: { isCreating } } = this;
     return (
       <div className={styles.sessionScene}>
         <Panel footer={(
           <div className={styles.action}>
-            <button disabled={isSigningIn} onClick={handleSignIn}>{t('sign_in')}</button>
+            <button disabled={isCreating} onClick={handleCreate}>{t('sign_in')}</button>
           </div>
         )} header={(
           <div>{t('sign_in')}</div>
         )}>
           <div className={styles.field}>
-            <input disabled={isSigningIn} placeholder='you@example.com' type='email'/>
+            <input disabled={isCreating} placeholder='you@example.com' type='email'/>
           </div>
           <div className={styles.field}>
-            <input disabled={isSigningIn} placeholder={t('password')} type='password'/>
+            <input disabled={isCreating} placeholder={t('password')} type='password'/>
           </div>
         </Panel>
       </div>

@@ -3,6 +3,10 @@ import React from 'react';
 
 import styles from './styles.css';
 
+/**
+ * A panel has an optional header and/or footer, and includes children whose
+ * content flexes to fill the space allotted by the parent container.
+ */
 class Panel extends React.Component {
   static get propTypes() {
     const { node } = PropTypes;

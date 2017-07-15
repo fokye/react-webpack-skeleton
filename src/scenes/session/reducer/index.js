@@ -8,12 +8,12 @@ const createSessionReducer = (initialState = {}) => (state = initialState, actio
     case SESSION_CREATE_START:
       return {
         ...state,
-        isSigningIn: true
+        isCreating: true
       };
     case SESSION_CREATE_FINISH:
       return {
         ...state,
-        isSigningIn: false,
+        isCreating: false,
         session: action.payload
       };
   }
