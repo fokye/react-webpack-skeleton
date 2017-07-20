@@ -20,7 +20,11 @@ const I18n = {
  *
  * @throws {Error} if no translation for the given key can be found.
  */
-const t = (key, ...more) => I18n.default(key, ...more);
+const t = (key, ...more) => {
+  // TODO: Detect the client locale to determine eligible dictionaries instead of just using the default.
+  // TODO: Throw an error if the key isn't found in any eligible dictionaries.
+  return I18n.default(key, ...more);
+};
 
 export { t };
 export default I18n;

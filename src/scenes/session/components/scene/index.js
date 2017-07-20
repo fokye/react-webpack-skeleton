@@ -5,6 +5,9 @@ import React from 'react';
 import styles from './styles.css';
 import { t } from '_/services/i18n';
 
+/**
+ * This scene renders the UI for creating a session (i.e: a sign in page).
+ */
 class SessionScene extends React.Component {
   static get propTypes() {
     const { bool, func } = PropTypes;
@@ -14,6 +17,7 @@ class SessionScene extends React.Component {
     };
   }
 
+  // Define callback handlers like this with a `handle` prefix, and bind them like this (as a lambda function assigned to an instance property.
   handleCreate = (event) => {
     const { props: { onCreate } } = this;
     event.preventDefault();

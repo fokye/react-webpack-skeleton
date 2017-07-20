@@ -7,4 +7,6 @@ const mapStateToProps = state => ({
   isCreating: !!state.session.isCreating
 });
 
-export default connect(mapStateToProps, { onCreate })(SessionScene);
+const mapDispatchToProps = ({ onCreate });
+
+export default connect(mapStateToProps, mapDispatchToProps)(SessionScene);
