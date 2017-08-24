@@ -13,6 +13,8 @@ const SESSION_CREATE_FINISH = 'SESSION_CREATE_FINISH';
 /**
  * Dispatches Redux actions related to session creation.
  * Delegates the app logic to a *service*.
+ *
+ * @returns {void}
  */
 const create = () => async (dispatch) => {
   // An asynchronous Redux action, per convention, should dispatch a START action like this to let the app know it has begun.

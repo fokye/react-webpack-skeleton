@@ -21,9 +21,9 @@ class Panel extends React.Component {
     const { props: { children, footer, header } } = this;
     return (
       <div className={styles.panel}>
-        {header && (<div className={styles.header}>{header}</div>)}
+        {header && <div className={styles.header}>{header}</div>}
         <div className={styles.content}>{children}</div>
-        {footer && (<div className={styles.footer}>{footer}</div>)}
+        {footer && <div className={styles.footer}>{footer}</div>}
       </div>
     );
   }

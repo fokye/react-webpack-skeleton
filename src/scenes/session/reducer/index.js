@@ -3,7 +3,7 @@ import { SESSION_CREATE_FINISH, SESSION_CREATE_START } from '../actions/create';
 /**
  * This reducer creator manages state specifically related to the Session scene.
  *
- * @param initialState {Object} The initial state for this reducer to have seeded,
+ * @param {object} initialState The initial state for this reducer to have seeded,
  * before any actions have been dispatched.
  *
  * @return {Function} A reducer function, of the signature expected by `Array#reduce`,
@@ -24,6 +24,8 @@ const createSessionReducer = (initialState = {}) => (state = initialState, actio
       }
       // TODO: What will our strategy be for error handling?
       break;
+    default:
+      // Do nothing: this is an action we do not know how to handle.
   }
   return state;
 };

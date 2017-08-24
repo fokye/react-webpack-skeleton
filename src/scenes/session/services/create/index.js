@@ -1,5 +1,7 @@
 /**
  * Mocks a naive session object.
+ *
+ * @returns {Session} A mocked session object.
  */
 const mockSession = () => ({
   user: {

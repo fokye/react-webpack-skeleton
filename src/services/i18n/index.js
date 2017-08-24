@@ -13,8 +13,8 @@ const I18n = {
  * Translates from the given key and the given optional arguments
  * to the appropriate translation.
  *
- * @param key {String} The key to translate.
- * @param more {Array} Optional. A variable list of arguments expected by the given translation key.
+ * @param {string} key The key to translate.
+ * @param {array} more Optional. A variable list of arguments expected by the given translation key.
  *
  * @return {String} The translation key.
  *
