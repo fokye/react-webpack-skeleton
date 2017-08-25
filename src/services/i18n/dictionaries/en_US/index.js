@@ -1,3 +1,5 @@
+/*eslint camelcase: "off"*/
+
 /**
  * A dictionary of all phrases used by this app.
  * Locale: English (United States)

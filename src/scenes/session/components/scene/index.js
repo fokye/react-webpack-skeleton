@@ -37,10 +37,10 @@ class SessionScene extends React.Component {
           <div>{t('sign_in')}</div>
         )}>
           <div className={styles.field}>
-            <input disabled={isCreating} placeholder='you@example.com' type='email'/>
+            <input disabled={isCreating} placeholder="you@example.com" type="email"/>
           </div>
           <div className={styles.field}>
-            <input disabled={isCreating} placeholder={t('password')} type='password'/>
+            <input disabled={isCreating} placeholder={t('password')} type="password"/>
           </div>
         </Panel>
       </div>

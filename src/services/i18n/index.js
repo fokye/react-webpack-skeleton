@@ -1,3 +1,5 @@
+/*eslint camelcase: "off"*/
+
 import en_US from './dictionaries/en_US';
 
 /**
