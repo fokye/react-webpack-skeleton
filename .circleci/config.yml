@@ -3,7 +3,7 @@ jobs:
   build:
     working_directory: ~/react-webpack-skeleton
     docker:
-      - image: phryg1an/circleci-node:8.1.4
+      - image: phryg1an/circleci-node:8.4.0
     steps:
       - checkout
       - restore_cache:
