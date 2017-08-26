@@ -12,7 +12,8 @@ jobs:
             - v1-{{ checksum ".nvmrc" }}-npm-package-{{ checksum "package.json" }}
       - run:
           name: Installing dependencies
-          command: yarn install --frozen-lockfile
+          command: |
+            yarn install --frozen-lockfile
       - save_cache:
           key: v1-{{ checksum ".nvmrc" }}-yarn-lock-{{ checksum "yarn.lock" }}
           paths:
@@ -22,15 +23,24 @@ jobs:
           paths:
             - node_modules
       - run:
+          name: Checking code style
+          command: |
+            mkdir -vp /tmp/test-results/junit
+            yarn lint -- --format junit --output-file /tmp/test-results/junit/eslint.xml
+      - run:
           name: Scanning dependencies for vulnerabilities
-          command: yarn run security
+          command: |
+            yarn run security
       - run:
           name: Testing
-          command: mkdir -p /tmp/test-results/junit && yarn test --silent -- --reporter xunit > /tmp/test-results/junit/test-results.xml
+          command: |
+            mkdir -vp /tmp/test-results/junit
+            yarn test --silent -- --reporter xunit > /tmp/test-results/junit/mocha.xml
       - store_test_results:
           path: /tmp/test-results
       - run:
           name: Building assets for production
-          command: NODE_ENV=production yarn build
+          command: |
+            NODE_ENV=production yarn build
       - store_artifacts:
           path: index.js

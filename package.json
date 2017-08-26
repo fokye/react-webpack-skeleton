@@ -16,6 +16,7 @@
   },
   "scripts": {
     "build": "scripts/build",
+    "lint": "scripts/lint",
     "security": "scripts/security",
     "start": "scripts/start",
     "test": "scripts/test"
