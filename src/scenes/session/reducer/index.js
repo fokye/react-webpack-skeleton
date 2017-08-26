@@ -22,7 +22,6 @@ const createSessionReducer = (initialState = {}) => (state = initialState, actio
       if (!action.error) {
         ({ payload: state.session } = action);
       }
-      // TODO: What will our strategy be for error handling?
       break;
     default:
       // Do nothing: this is an action we do not know how to handle.

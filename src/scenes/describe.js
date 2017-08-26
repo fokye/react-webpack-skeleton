@@ -1,4 +1,4 @@
-/*global describe*/
+/* global describe*/
 
 /**
  * This helper function provides convenience methods

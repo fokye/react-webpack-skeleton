@@ -3,7 +3,7 @@ import SessionScene from './components/scene';
 import { connect } from 'react-redux';
 import onCreate from './actions/create';
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state) => ({
   isCreating: Boolean(state.session.isCreating)
 });
 

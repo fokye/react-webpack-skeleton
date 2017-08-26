@@ -16,13 +16,9 @@ const mockSession = () => ({
  *
  * @return {Promise} Resolves to a mock session, always.
  */
-const createSession = () => {
-  // TODO: Maybe accept some function arguments here.
-  return new Promise((resolve) => {
-    // TODO: Actually perform some real authentication here.
-    const session = mockSession();
-    resolve(session);
-  });
-};
+const createSession = () => new Promise((resolve) => {
+  const session = mockSession();
+  resolve(session);
+});
 
 export default createSession;

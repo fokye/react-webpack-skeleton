@@ -1,4 +1,4 @@
-/*global context, it*/
+/* global context, it*/
 import Panel from './index';
 
 import describeComponent from '_/components/describe';

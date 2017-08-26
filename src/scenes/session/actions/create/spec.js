@@ -1,4 +1,4 @@
-/*global describe, it*/
+/* global describe, it*/
 import create, { SESSION_CREATE_FINISH, SESSION_CREATE_START } from './index';
 
 import chai from 'chai';

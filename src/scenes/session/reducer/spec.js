@@ -1,4 +1,4 @@
-/*global it*/
+/* global it*/
 
 import createSessionReducer from './index';
 import describeReducer from '_/reducer/describe';

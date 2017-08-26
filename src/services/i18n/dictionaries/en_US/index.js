@@ -1,4 +1,4 @@
-/*eslint camelcase: "off"*/
+/* eslint camelcase: "off"*/
 
 /**
  * A dictionary of all phrases used by this app.
@@ -12,6 +12,6 @@
 const en_US = (key, ...more) => ({
   password: () => 'Password',
   sign_in: () => 'Sign In'
-})[key](...more);
+}[key](...more));
 
 export default en_US;

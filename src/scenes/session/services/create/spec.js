@@ -1,4 +1,4 @@
-/*global it*/
+/* global it*/
 import create from './index';
 import describeService from '_/services/describe';
 
