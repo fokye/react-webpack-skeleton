@@ -49,10 +49,7 @@ jobs:
             NODE_ENV=production yarn build
       - store_artifacts:
           path: index.html
-          destination: /
       - store_artifacts:
           path: index.css
-          destination: /
       - store_artifacts:
           path: index.js
-          destination: /
