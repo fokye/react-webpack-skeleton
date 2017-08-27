@@ -2,6 +2,10 @@
 # yarn lockfile v1
 
 
+"@phryg1an/eslint-plugin-strict@1.0.1":
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@phryg1an/eslint-plugin-strict/-/eslint-plugin-strict-1.0.1.tgz#d7befae14f35b12e53151ea01167dbf702d07694"
+
 abbrev@1, abbrev@^1.0.7:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/abbrev/-/abbrev-1.1.0.tgz#d0554c2256636e2f56e7c2e5ad183f859428d81f"
