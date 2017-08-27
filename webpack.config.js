@@ -17,7 +17,10 @@ module.exports = {
     filename: 'index.js'
   },
   plugins: [
-    isProduction && new webpack.optimize.UglifyJsPlugin()
+    isProduction && new webpack.optimize.UglifyJsPlugin(),
+    new webpack.DefinePlugin({
+      'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV)
+    })
   ].filter(Boolean),
   module: {
     rules: [
