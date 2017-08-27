@@ -12,13 +12,12 @@ with reasonable defaults.
 
  * CSS modules.
 
- * Bleeding-edge JavaScript using Babel with Stage 0 features active.
+ * Modern JavaScript using Babel with Stage 2 features active.
 
  * Version-locked dependencies with lockfiles for predictability.
 
    * `.nvmrc` for [`nvm`](https://github.com/creationix/nvm) to indicate the Node version desired for this project.
    * `yarn.lock` for dependencies installed via [`yarn`](https://yarnpkg.com/).
-   * `package-lock.json` for dependencies installed via [`npm`](https://www.npmjs.com/).
 
  * Integrated vulnerability scanning via [snyk](https://snyk.io/).
 
