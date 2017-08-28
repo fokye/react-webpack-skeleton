@@ -1,6 +1,7 @@
 # React Webpack Skeleton
 
 [![CircleCI](https://circleci.com/gh/fokye/react-webpack-skeleton.svg?style=svg)](https://circleci.com/gh/fokye/react-webpack-skeleton)
+[![Known Vulnerabilities](https://snyk.io/test/github/fokye/react-webpack-skeleton/badge.svg)](https://snyk.io/test/github/fokye/react-webpack-skeleton)
 
 This project is a reference implementation for a modern React app.
 It is intended to be a starting point for a *production* application
