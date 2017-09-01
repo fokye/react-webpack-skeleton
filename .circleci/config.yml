@@ -52,6 +52,12 @@ jobs:
       - store_test_results:
           path: /tmp/test-results
       - run:
+          name: Generate documentation
+          command: |
+            yarn run documentation
+      - store_artifacts:
+          path: docs
+      - run:
           name: Building assets for production
           command: |
             NODE_ENV=production yarn build
