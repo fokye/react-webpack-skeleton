@@ -9,6 +9,7 @@
 .panel,
 .header,
 .footer {
+  border-color: #ccc;
   border-color: rgba(128, 128, 128, 0.25);
   border-style: solid;
 }

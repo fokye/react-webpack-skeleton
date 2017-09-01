@@ -1,3 +1,5 @@
+const strict = require('./.eslintrc.strict.js');
+
 module.exports = {
   env: {
     browser: true,
@@ -5,9 +7,7 @@ module.exports = {
   },
   extends: [
     'eslint:recommended',
-    'plugin:react/recommended',
-    'plugin:@phryg1an/eslint-plugin-strict/recommended',
-    'plugin:@phryg1an/eslint-plugin-strict/style'
+    'plugin:react/recommended'
   ],
   parser: 'babel-eslint',
   parserOptions: {
@@ -19,7 +19,7 @@ module.exports = {
     sourceType: 'module'
   },
   plugins: [
-    'react',
-    '@phryg1an/eslint-plugin-strict'
-  ]
+    'react'
+  ],
+  rules: strict.rules
 };
