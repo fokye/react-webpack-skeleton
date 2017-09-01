@@ -6,6 +6,7 @@ SOURCE_DIR=${BASE_DIR}/src
 NODE_MODULES_DIR=${BASE_DIR}/node_modules
 
 MOCHA=${NODE_MODULES_DIR}/.bin/mocha
+NYC=${NODE_MODULES_DIR}/.bin/nyc
 ESLINT=${NODE_MODULES_DIR}/.bin/eslint
 
 link_source_dir() {
@@ -29,7 +30,7 @@ run_tests() {
   link_source_dir
   (
     cd "${SOURCE_DIR}"
-    find . -type f -name spec.js | xargs "${MOCHA}" $* \
+    find . -type f -name spec.js | NODE_ENV=test xargs "${NYC}" --silent --temp-directory "${BASE_DIR}/.nyc" "${MOCHA}" $* \
       --compilers js:babel-register \
       --require babel-polyfill \
       spec.setup.js

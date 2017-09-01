@@ -37,6 +37,14 @@ jobs:
             mkdir -vp /tmp/test-results
             yarn test --silent -- --reporter xunit > /tmp/test-results/mocha.xml
       - run:
+          name: Generating code coverage report
+          command: |
+            yarn run coverage -- --report-dir coverage
+            mkdir -vp /tmp/test-results
+            cp coverage/lcov.info /tmp/test-results/coverage.lcov
+      - store_artifacts:
+          path: coverage
+      - run:
           name: Merging test results
           command: |
             mkdir -vp /tmp/test-results/junit

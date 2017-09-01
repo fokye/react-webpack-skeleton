@@ -16,6 +16,7 @@
   },
   "scripts": {
     "build": "scripts/build",
+    "coverage": "scripts/coverage",
     "lint": "scripts/lint",
     "security": "scripts/security",
     "start": "scripts/start",
@@ -25,6 +26,7 @@
     "babel-core": "6.26.0",
     "babel-eslint": "7.2.3",
     "babel-loader": "7.1.2",
+    "babel-plugin-istanbul": "4.1.4",
     "babel-polyfill": "6.26.0",
     "babel-preset-env": "1.6.0",
     "babel-preset-react": "6.24.1",
@@ -40,6 +42,7 @@
     "eslint-plugin-react": "7.3.0",
     "junit-merge": "1.1.0",
     "mocha": "3.5.0",
+    "nyc": "11.1.0",
     "react-test-renderer": "15.6.1",
     "sinon": "3.2.1",
     "sinon-chai": "2.13.0",
@@ -55,5 +58,19 @@
     "react-redux": "5.0.6",
     "redux": "3.7.2",
     "redux-thunk": "2.2.0"
+  },
+  "nyc": {
+    "include": [
+      "**/index.js"
+    ],
+    "require": [
+      "babel-register"
+    ],
+    "reporter": [
+      "lcov",
+      "text"
+    ],
+    "sourceMap": false,
+    "instrument": false
   }
 }
