@@ -21,7 +21,9 @@
     "lint": "scripts/lint",
     "security": "scripts/security",
     "start": "scripts/start",
-    "test": "scripts/test"
+    "test": "scripts/test",
+    "snyk-protect": "snyk protect",
+    "prepare": "yarn run snyk-protect"
   },
   "devDependencies": {
     "babel-core": "6.26.0",
@@ -48,7 +50,6 @@
     "react-test-renderer": "15.6.1",
     "sinon": "3.2.1",
     "sinon-chai": "2.13.0",
-    "snyk": "1.40.1",
     "style-loader": "0.18.2",
     "webpack": "3.5.5",
     "webpack-dev-server": "2.7.1"
@@ -59,7 +60,8 @@
     "react-dom": "15.6.1",
     "react-redux": "5.0.6",
     "redux": "3.7.2",
-    "redux-thunk": "2.2.0"
+    "redux-thunk": "2.2.0",
+    "snyk": "^1.319.0"
   },
   "nyc": {
     "include": [
@@ -74,5 +76,6 @@
     ],
     "sourceMap": false,
     "instrument": false
-  }
+  },
+  "snyk": true
 }
